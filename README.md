@@ -11,8 +11,6 @@ echo "00 00 ff 20 df 00 ff 00 ff 00 ff 00 ff 00 ff" | xxd -r -p > option_bytes_p
 stm8flash -c stlinkv2 -p "stm8s105?6" -s opt -w option_bytes_pwm_n_channels_enabled.bin
 stm8flash -c stlinkv2 -p "stm8s105?6" -w releases/TSDZ2-20.1C.2-2-initialflash.hex.bin
 
-This is using the binary format, converted hex to binary with:
-objcopy -I ihex -O binary releases/TSDZ2-20.1C.2-2-initialflash.hex releases/TSDZ2-20.1C.2-2-initialflash.hex.bin
-Pretty sure this was not necessary, will try without on next flash
+This is using the binary format, converted hex to binary with objcopy according to wiki. Turns out this was not necessary and later flash was done directly with hex format
 
 Speed sensor error check disabled in ebike_app.c by just not incrementing the error timer
