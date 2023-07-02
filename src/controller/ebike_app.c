@@ -1798,7 +1798,8 @@ static void check_system()
 	// check speed sensor
 	if((ui16_motor_speed_erps > MOTOR_ERPS_SPEED_THRESHOLD)
 	  &&(m_configuration_variables.ui8_riding_mode != WALK_ASSIST_MODE)) {
-		ui16_check_speed_sensor_counter++;
+		// Joakim: disable speed sensor error check by never reaching the threshold
+		// ui16_check_speed_sensor_counter++;
 	}
 	else {
 		ui16_check_speed_sensor_counter = 0;
