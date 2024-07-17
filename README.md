@@ -14,3 +14,6 @@ stm8flash -c stlinkv2 -p "stm8s105?6" -w releases/TSDZ2-20.1C.2-2-initialflash.h
 This is using the binary format, converted hex to binary with objcopy according to wiki. Turns out this was not necessary and later flash was done directly with hex format
 
 Speed sensor error check disabled in ebike_app.c by just not incrementing the error timer
+
+To mess with settings, before flashing run
+java -jar JavaConfigurator.jar
