@@ -15,5 +15,15 @@ This is using the binary format, converted hex to binary with objcopy according 
 
 Speed sensor error check disabled in ebike_app.c by just not incrementing the error timer
 
+----------------------------------------------------------------------------------------------------
+
+TL;DR
+
 To mess with settings, before flashing run
 java -jar JavaConfigurator.jar
+
+To compile run the following and select no on backup and flash questions
+./compile_and_flash_20.sh <name of build>
+
+To then flash run 
+stm8flash -c stlinkv2 -p "stm8s105?6" -w releases/TSDZ2-20.1C.2-2-<name of build>.hex
