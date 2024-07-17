@@ -19,11 +19,13 @@ Speed sensor error check disabled in ebike_app.c by just not incrementing the er
 
 TL;DR
 
-To mess with settings, before flashing run
+Have stm8flash with patch installed. Since I did my first work stm8flash has merged the patch so an official release might work. Otherwise use my branch and do make && make install or something like that
+
+To mess with settings, before flashing run and press the compile button to save (wont actually compile or flash anything)
 java -jar JavaConfigurator.jar
 
 To compile run the following and select no on backup and flash questions
 ./compile_and_flash_20.sh <name of build>
 
 To then flash run 
-stm8flash -c stlinkv2 -p "stm8s105?6" -w releases/TSDZ2-20.1C.2-2-<name of build>.hex
+stm8flash -c stlinkv2 -p "stm8s105?6" -w releases/TSDZ2-20.1C.2-2-immediateassist52V.hex
